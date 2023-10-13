@@ -7,16 +7,18 @@ services:
       context: ./
       dockerfile: Dockerfile
     ports:
-      - 3000:3000
+      - 4444:3000
+    depends_on:
+      - language_assesment_db
 
-  db:
+  language_assesment_db:
     image: postgres
     restart: always
     environment:
       - POSTGRES_PASSWORD=languageassessmentpassword
       - POSTGRES_USER=postgres
     ports:
-      - 5432:5432
+      - 5437:5432
     volumes:
       - ./postgres_data:/var/lib/postgresql/data
       - ./upload:/app/upload
