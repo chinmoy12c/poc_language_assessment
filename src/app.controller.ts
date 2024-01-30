@@ -30,7 +30,8 @@ export class AppController {
           totalTimeTaken: parseInt(data.totalTimeTaken, 10),
           wordsPerMinute: parseInt(data.wordsPerMinute, 10),
           audioFileName: file.originalname,
-          textReadId: parseInt(data.textReadId, 10)
+          textReadId: parseInt(data.textReadId, 10),
+          text: data.text
         }
       });
       return {

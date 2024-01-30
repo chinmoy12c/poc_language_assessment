@@ -24,4 +24,5 @@ model student_data {
   wordsPerMinute Decimal
   audioFileName String
   textReadId Int
+  text String
 }
