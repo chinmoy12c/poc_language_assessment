@@ -10,6 +10,8 @@ services:
       - 4444:3000
     depends_on:
       - language_assesment_db
+    volumes:
+      - ./upload:/app/upload
 
   language_assesment_db:
     image: postgres
@@ -21,4 +23,3 @@ services:
       - 5437:5432
     volumes:
       - ./postgres_data:/var/lib/postgresql/data
-      - ./upload:/app/upload
