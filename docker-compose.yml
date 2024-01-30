@@ -12,6 +12,9 @@ services:
       - language_assesment_db
     volumes:
       - ./upload:/app/upload
+    environment:
+      DATABASE_URL: "postgresql://postgres:languageassessmentpassword@language_assesment_db:5432/postgres"
+
 
   language_assesment_db:
     image: postgres
@@ -20,6 +23,10 @@ services:
       - POSTGRES_PASSWORD=languageassessmentpassword
       - POSTGRES_USER=postgres
     ports:
-      - 5437:5432
+      - 5432:5432
     volumes:
-      - ./postgres_data:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
+
